@@ -29,7 +29,7 @@ Things you may want to cover:
 | Column                | Type   | Options     |
 | --------------------- | ------ | ----------- |
 | email                 | string | null: false |
-| password_encrypted    | string | null: false |
+| encrypted_password    | string | null: false |
 | last_name             | string | null: false |
 | last_name_en          | string | null: false |
 | first_name            | string | null: false |
@@ -43,8 +43,8 @@ Things you may want to cover:
 | academic_affiliations | string |             |
 
 ### Association
-has_many :articles
-has_one_attached :image
+has_many :articles,      dependent: :destroy
+has_one_attached :image, dependent: :destroy
 
 ## articlesテーブル
 | Column       | Type       | Options                         |
