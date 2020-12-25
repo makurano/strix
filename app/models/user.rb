@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   # 半角英数字混合
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
-  validates_format_of :password, with: PASSWORD_REGEX, message: 'Include both letters and numbers'
+  validates_format_of :password, with: PASSWORD_REGEX, message: 'Include both letters and numbers.'
 
   with_options presence: true do
     # 全角での入力「あ〜漢字」正規表現
