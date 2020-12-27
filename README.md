@@ -56,10 +56,10 @@ Things you may want to cover:
 | category_id  | integer    | null: false, numericality: true |
 | user         | references | null: false, foreign_key: true  |
 ### Association
-- belongs_to :users
+- belongs_to :user
 - extend ActiveHash::Associations::ActiveRecordExtensions
 - belongs_to :category
-- has_one_attached :article_file
+- has_one_attached :article_file, dependent: :destroy
 
 # ActiveHash
 ## category
