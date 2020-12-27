@@ -1,2 +1,23 @@
 <%= render "shared/header" %>
 <%= link_to "新規投稿", new_article_path%>
+
+<%= link_to "論文", articles_path(category_id: 1) %>
+<%= link_to "研究ノート", articles_path(category_id: 2) %>
+<%= link_to "講義資料", articles_path(category_id: 3) %>
+<%= link_to "その他", articles_path(category_id: 4) %>
+
+<% @articles.each do |article| %>
+  <div class="article-box">
+    <ul>
+      <li><%= article.category.name %></li>
+      <li><%= article.title %></li>
+      <li><%= article.title_en %></li>
+      <li><%= "#{article.user.last_name}#{article.user.first_name}" %></li>
+      <li><%= article.journal_name %></li>
+      <li><%= article.publication_date%></li>
+      <% if article.article_file.present? %>
+      <li><%= link_to "download", rails_blob_path(article.article_file) %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
