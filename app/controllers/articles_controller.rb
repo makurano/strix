@@ -1,9 +1,6 @@
 class ArticlesController < ApplicationController
-
-
   def index
     @articles = Article.includes(:user).with_attached_article_file
-    binding.pry
   end
 
   def new
@@ -20,7 +17,9 @@ class ArticlesController < ApplicationController
   end
 
   private
-    def article_params
-      params.require(:article).permit(:title, :title_en, :journal_name, :abstract, :category_id, :article_file).merge(user_id: current_user.id)
-    end
+
+  def article_params
+    params.require(:article).permit(:title, :title_en, :journal_name, :abstract, :category_id,
+                                    :article_file).merge(user_id: current_user.id)
+  end
 end
