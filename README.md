@@ -43,8 +43,8 @@ Things you may want to cover:
 | academic_affiliations | string |             |
 
 ### Association
-has_many :articles,      dependent: :destroy
-has_one_attached :image, dependent: :destroy
+- has_many :articles,      dependent: :destroy
+- has_one_attached :image, dependent: :destroy
 
 ## articlesテーブル
 | Column       | Type       | Options                         |
