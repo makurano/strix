@@ -6,6 +6,6 @@ class Article < ApplicationRecord
 
   with_options presence: true do
     validates :title
-    validates :category_id, numericality: { ohter_than: 0, message: 'select'}
+    validates :category_id, numericality: { other_than: 0, message: 'select' }
   end
 end

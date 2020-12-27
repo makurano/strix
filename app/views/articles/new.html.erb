@@ -1,0 +1,18 @@
+<%= form_with model: @article, local: true do |f| %>
+  <%= render 'shared/error_messages', model: @article %>
+  <div>カテゴリー選択</div>
+  <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box"}) %>
+  <div>タイトル</div>
+  <%= f.text_area :title, placeholder:"タイトル"%>
+  <div>Title</div>
+  <%= f.text_area :title_en, placeholder:"Title" %>
+  <div>著者</div>
+  <div><%= "#{current_user.last_name}#{current_user.first_name}" %></div>
+  <div>掲載誌</div>
+  <%= f.text_area :journal_name, placeholder:"journal" %>
+  <div>概要</div>
+  <%= f.text_area :abstract, placeholder:"abstract" %>
+  <%= f.file_field :article_file, class:"document-field"%>
+
+  <%= f.submit "投稿する", class:"post-btn"%>
+<% end %>
