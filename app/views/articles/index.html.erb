@@ -8,6 +8,8 @@
 
 <% @articles.each do |article| %>
   <div class="article-box">
+
+  <a href="/articles/<%= article.id %>">
     <ul>
       <li><%= article.category.name %></li>
       <li><%= article.title %></li>
@@ -19,5 +21,6 @@
       <li><%= link_to "download", rails_blob_path(article.article_file) %></li>
       <% end %>
     </ul>
+  </a>
   </div>
 <% end %>

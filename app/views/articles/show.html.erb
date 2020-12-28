@@ -1,0 +1,25 @@
+
+  <div>カテゴリー</div>
+  <%= @article.category.name %>
+  <div>タイトル</div>
+  <%= @article.title %>
+  <div>Title</div>
+  <%= @article.title_en %>
+  <div>著者</div>
+  <div><%= "#{@article.user.last_name}#{@article.user.first_name}" %></div>
+  <div>掲載誌</div>
+  <%= @article.journal_name %>
+  <div>掲載日</div>
+  <%= @article.publication_date%>
+  <div>概要</div>
+  <%= @article.abstract %>
+  <% if @article.article_file.present? %>
+    <%= link_to "download", rails_blob_path(@article.article_file) %>
+  <% end %>
+
+  <%# if current_user.id == @article.user.id%>
+    <%#= link_to "編集する", %>
+    <%#= link_to "削除する", %>
+  <%# end %>
+
+  <%= link_to "戻る", root_path %>
