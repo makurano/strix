@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_article, only: [:show, :edit, :update]
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :prevent_edit, only: [:edit, :update, :destroy]
+  
 
   def index
     @articles = Article.includes(:user).with_attached_article_file
@@ -13,7 +15,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
-      redirect_to root_path
+      redirect_to action: :index
     else
       render :new
     end
@@ -33,6 +35,15 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def destroy
+    if @article.destroy
+      @article.article_file.purge
+      redirect_to action: :index
+    else
+      render :edit
+    end
+  end
+
   private
 
   def article_params
@@ -43,4 +54,9 @@ class ArticlesController < ApplicationController
   def set_article
     @article = Article.find(params[:id])
   end
+
+  def prevent_edit
+    redirect_to action: :index unless current_user.id == @article.user_id
+  end
+
 end
