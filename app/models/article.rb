@@ -2,7 +2,7 @@ class Article < ApplicationRecord
   belongs_to :user
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
-  has_one_attached :article_file, dependent: :destroy
+  has_one_attached :article_file
 
   with_options presence: true do
     validates :title

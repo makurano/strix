@@ -20,7 +20,7 @@
 <%if user_signed_in? %>
   <% if current_user.id == @article.user.id%>
     <%= link_to "編集する", edit_article_path %>
-    <%#= link_to "削除する", %>
+    <%= link_to "削除する", article_path, method: :DELETE %>
   <% end %>
 <% end %>
 
