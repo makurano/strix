@@ -10,16 +10,18 @@
   <div>掲載誌</div>
   <%= @article.journal_name %>
   <div>掲載日</div>
-  <%= @article.publication_date%>
+  <%= @article.publication_date %>
   <div>概要</div>
   <%= @article.abstract %>
   <% if @article.article_file.present? %>
     <%= link_to "download", rails_blob_path(@article.article_file) %>
   <% end %>
 
-  <%# if current_user.id == @article.user.id%>
-    <%#= link_to "編集する", %>
+<%if user_signed_in? %>
+  <% if current_user.id == @article.user.id%>
+    <%= link_to "編集する", edit_article_path %>
     <%#= link_to "削除する", %>
-  <%# end %>
+  <% end %>
+<% end %>
 
   <%= link_to "戻る", root_path %>
