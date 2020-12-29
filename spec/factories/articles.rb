@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :article do
     title            { 'テスト用論文' }
-    title_en         { 'paper for test'}
+    title_en         { 'paper for test' }
     journal_name     { '架空論文誌' }
     publication_date { '1980-12-25' }
     abstract         { Faker::Lorem.sentence }
