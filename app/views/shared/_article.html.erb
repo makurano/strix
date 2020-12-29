@@ -1,0 +1,16 @@
+  <div class="article-box">
+
+  <a href="/articles/<%= article.id %>">
+    <ul>
+      <li><%= article.category.name %></li>
+      <li><%= article.title %></li>
+      <li><%= article.title_en %></li>
+      <li><%= "#{article.user.last_name}#{article.user.first_name}" %></li>
+      <li><%= article.journal_name %></li>
+      <li><%= article.publication_date%></li>
+      <% if article.article_file.present? %>
+      <li><%= link_to "download", rails_blob_path(article.article_file) %></li>
+      <% end %>
+    </ul>
+  </a>
+  </div>
