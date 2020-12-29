@@ -11,13 +11,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :first_name,         null: false
       t.string :first_name_en,      null: false
       t.date   :birthday,           null: false
-      t.string :degree
-      t.string :affiliation
-      t.string :research_fields
-      t.string :contact
-      t.string :education
-      t.string :academic_affiliations
-
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at

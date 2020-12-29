@@ -21,6 +21,6 @@ class User < ApplicationRecord
     validates :birthday
   end
 
-  has_many         :articles
-  has_one_attached :image
+  has_one          :profile,  dependent: :destroy
+  has_many         :articles, dependent: :destroy
 end
