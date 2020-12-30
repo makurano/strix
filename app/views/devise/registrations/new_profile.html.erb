@@ -1,0 +1,47 @@
+<h2>Profile</h2>
+
+<%= form_for @profile do |f| %>
+  <%= render "devise/shared/error_messages", resource: @profile %>
+
+  <div>プロフィールに表示させる画像を選択してください</div>
+  <div>
+    <%#= f.label :affliation %>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :degree %><br />
+    <%= f.text_area :degree %>
+  </div>
+
+  <div class="field">
+    <%= f.label :affliation %><br />
+    <%= f.text_area :affiliation %>
+  </div>
+
+  <div class="field">
+    <%= f.label :research_fields %><br />
+    <%= f.text_area :research_fields %>
+  </div>
+
+  <div class="field">
+    <%= f.label :contact %><br />
+    <%= f.text_area :contact %>
+  </div>
+
+  <div class="field">
+    <%= f.label :education %><br />
+    <%= f.text_area :education %>
+  </div>
+
+  <div class="field">
+    <%= f.label :academic_affiliations %><br />
+    <%= f.text_area :academic_affiliations %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
