@@ -28,7 +28,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render :new_profile and return
     end
     @user.build_profile(@profile.attributes)
-    if @user.save && @profile.image.save
+    @user.profile.image = profile_params[:image]
+    if @user.save
       session["devise.regist_data"]["user"].clear
       sign_in(:user, @user)
     else 
@@ -39,7 +40,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
  
   def profile_params
-    params.require(:profile).permit(:degree, :affiliation, :research_fields, :contact, :education, :academic_affiliations, :image)
+    params.require(:profile).permit(:image, :degree, :affiliation, :research_fields, :contact, :education, :academic_affiliations)
   end
 
   # GET /resource/edit
