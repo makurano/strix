@@ -1,0 +1,54 @@
+<h1>Profile Edit</h1>
+
+<%= form_with model: @profile, local: true do |f| %>
+
+  <div>
+    <div><%= f.file_field :image %></div>
+  </div>
+  <div>
+    <div>Name</div>
+    <div><%="#{@profile.user.first_name_en}#{@profile.user.last_name_en}"%></div>
+  </div>
+
+  <div>
+    <div>Degree</div>
+    <div><%= f.text_area :degree %></div>
+  </div>
+
+  <div>
+    <div>Birthday</div>
+    <div><%= @profile.user.birthday %></div>
+  </div>
+
+  <div>
+    <div>Affiliation</div>
+    <div><%= f.text_area :affiliation %></div>
+  </div>
+
+  <div>
+    <div>Research Fields</div>
+    <div><%= f.text_area :research_fields %></div>
+  </div>
+
+  <div>
+    <div>Contact</div>
+    <div><%= f.text_area :contact %></div>
+  </div>
+
+  <div>
+    <div>Education</div>
+    <div><%= f.text_area :education %></div>
+  </div>
+
+  <div>
+    <div>Academic Affiliations</div>
+    <div><%= f.text_area :academic_affiliations %></div>
+  </div>
+
+  <div>
+    <%= f.submit "更新する" %>
+  </div>
+
+<% end %>
+
+<%= link_to "戻る", profile_path %>

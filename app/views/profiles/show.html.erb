@@ -49,7 +49,7 @@
 
 <%if user_signed_in? %>
   <% if current_user.id == @profile.user.id%>
-    <%= link_to "編集する", "#" %>
+    <%= link_to "編集する", edit_profile_path %>
   <% end %>
 <% end %>
 
