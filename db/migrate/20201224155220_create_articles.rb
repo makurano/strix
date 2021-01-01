@@ -4,6 +4,7 @@ class CreateArticles < ActiveRecord::Migration[6.0]
       t.string     :title, null: false
       t.string     :title_en
       t.string     :journal_name
+      t.date       :publication_date
       t.string     :abstract
       t.integer    :category_id, null: false
       t.references :user,        foreign_key: true
