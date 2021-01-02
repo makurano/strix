@@ -2,6 +2,8 @@
 <%= link_to "新規投稿", new_article_path%>
 
 <%= form_with url: search_articles_path, local: true, method: :get do |f| %>
+  <% types = {記事: :articles, 研究者: :researchers} %>
+  <%= f.select :type, types %>
   <%= f.text_field :keyword, placeholder: "記事検索" %>
   <%= f.submit "検索" %>
 <% end %>

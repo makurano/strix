@@ -42,7 +42,13 @@ class ArticlesController < ApplicationController
   end
 
   def search
-    @articles = Article.search(params[:keyword]).with_attached_article_file.order('articles.created_at DESC')
+    case params[:type]
+    when "articles"
+      @articles = Article.search(params[:keyword]).with_attached_article_file.order('articles.created_at DESC')
+    when "researchers"
+      @researchers = User.search(params[:keyword])
+    end
+    # binding.pry
   end
 
   private

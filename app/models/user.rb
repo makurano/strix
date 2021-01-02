@@ -23,4 +23,13 @@ class User < ApplicationRecord
 
   has_one          :profile,  dependent: :destroy
   has_many         :articles, dependent: :destroy
+
+  def self.search(search)
+    if search != ''
+      User.where('last_name LIKE(?) OR first_name LIKE(?) OR last_name_en LIKE(?) OR first_name_en LIKE(?)',
+                                      "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+    else
+      User.all
+    end
+  end
 end
