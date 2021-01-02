@@ -1,16 +1,44 @@
-  <div class="article-box">
-
-  <a href="/articles/<%= article.id %>">
-    <ul>
-      <li><%= article.category.name %></li>
-      <li><%= article.title %></li>
-      <li><%= article.title_en %></li>
-      <li><%= "#{article.user.last_name}#{article.user.first_name}" %></li>
-      <li><%= article.journal_name %></li>
-      <li><%= article.publication_date%></li>
-      <% if article.article_file.present? %>
-      <li><%= link_to "download", rails_blob_path(article.article_file) %></li>
-      <% end %>
-    </ul>
-  </a>
+<div class="card">
+  <a>
+  <div class="card-contents">
+    <div class="card-header">
+      <div class="card-bar-long">
+        <%= article.title %>
+      </div>
+      <div class="card-bar-long">
+        <%# if article.title_en.present? %>
+          &nbsp;<%= article.title_en %>
+        <%# end %>
+      </div>
+      <div class="card-bar-long">
+        著者:&nbsp;<%= "#{article.user.last_name}#{article.user.first_name}" %>
+      </div>
+    </div>
+    <div class="card-middle">
+      <div class="card-bar-middle">
+        <%# if article.journal_name.present? %>
+          掲載誌:&nbsp;<%= article.journal_name %>
+        <%# end %>
+      </div>
+      <div class="card-bar-middle">
+        <%# if article.publication_date.present? %>
+          掲載日:&nbsp;<%= article.publication_date %>
+        <%# end %>
+      </div>
+      <div class="card-download-btn">
+        <% if article.article_file.present? %>
+          <%= link_to "download", rails_blob_path(article.article_file) %>
+        <% end %>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="card-bar-short">
+        <%= article.category.name %>
+      </div>
+      <div class="card-bar-short">
+        <%= article.created_at %>
+      </div>
+    </div>
   </div>
+  </a>
+</div>
