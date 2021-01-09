@@ -4,7 +4,11 @@ class ArticlesController < ApplicationController
   before_action :prevent_edit, only: %i[edit update destroy]
 
   def index
-    @articles = Article.includes(:user).with_attached_article_file.order('created_at DESC')
+    if params[:category_id] == nil
+      @articles = Article.includes(:user).with_attached_article_file.order('created_at DESC')
+    elsif params[:category_id] == "1"||"2"||"3"||"4"
+      @articles = Article.where(category_id: params[:category_id]).includes(:user).with_attached_article_file.order('created_at DESC')
+    end
   end
 
   def new
