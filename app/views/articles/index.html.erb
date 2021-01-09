@@ -13,8 +13,10 @@
 
     <div class="index-main-bar">
       <%= render "shared/category_tabs" %>
-      <% @articles.each do |article| %>
-        <%= render "shared/article_card", article: article %>
+      <% if @articles.present? %>
+        <% @articles.each do |article| %>
+          <%= render "shared/article_card", article: article %>
+        <% end %>
       <% end %>
     </div>
   </div>
