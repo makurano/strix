@@ -1,27 +1,43 @@
+<div class="header">
+  <%= render "shared/header" %>
+  <%= render "shared/post_form" %>
+</div>
 
-  <div>カテゴリー</div>
-  <%= @article.category.name %>
-  <div>タイトル</div>
-  <%= @article.title %>
-  <div>Title</div>
-  <%= @article.title_en %>
-  <div>著者</div>
-  <div><%= "#{@article.user.last_name}#{@article.user.first_name}" %></div>
-  <div>掲載誌</div>
-  <%= @article.journal_name %>
-  <div>掲載日</div>
-  <%= @article.publication_date %>
-  <div>概要</div>
-  <%= @article.abstract %>
-  <% if @article.article_file.present? %>
-    <%= link_to "download", rails_blob_path(@article.article_file) %>
-  <% end %>
+<div class="main">
+  <%= render "shared/search_form" %>
 
-<%if user_signed_in? %>
-  <% if current_user.id == @article.user.id%>
-    <%= link_to "編集する", edit_article_path %>
-    <%= link_to "削除する", article_path, method: :DELETE %>
-  <% end %>
-<% end %>
+  <div class="show-wrapper">
+    <div class="show-left-bar">
+      <div class="article-title">カテゴリー</div>
+        <div class="article-contents"><%= @article.category.name %></div>
+      <div class="article-title">タイトル</div>
+        <div class="article-contents"><%= @article.title %></div>
+      <div class="article-title">Title</div>
+        <div class="article-contents"><%= @article.title_en %>&nbsp;</div>
+      <div class="article-title">著者</div>
+        <div class="article-contents"><%= "#{@article.user.last_name}#{@article.user.first_name}" %></div>
+      <div class="article-title" >掲載誌</div>
+        <div class="article-contents"><%= @article.journal_name %>&nbsp;</div>
+      <div class="article-title" >掲載日</div>
+        <div class="article-contents"><%= @article.publication_date %>&nbsp;</div>
+      <div class="article-title" >概要</div>
+        <div class="article-contents"><%= @article.abstract %>&nbsp;</div>
+      <%= link_to "戻る", root_path %>
+    </div>
+    
+    <div class="show-right-bar">
+      <% if @article.article_file.present? %>
+        <%= link_to "download", rails_blob_path(@article.article_file), class:"download-btn" %>
+      <% end %>
 
-  <%= link_to "戻る", root_path %>
+      <div class="show-edit-btn">
+        <%if user_signed_in? %>
+          <% if current_user.id == @article.user.id%>
+            <%= link_to "編集する", edit_article_path, class:"edit-btn" %>
+            <%= link_to "削除する", article_path, method: :DELETE, class:"delete-btn" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

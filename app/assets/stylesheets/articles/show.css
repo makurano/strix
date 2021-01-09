@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  position: fixed;
+}
+
+.main {
+  padding-top: 90px;
+}
+
+.show-wrapper {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto 0;
+}
+
+.show-right-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+a.download-btn {
+  display: block;
+  text-align: center;
+  width: 200px;
+  height: 80px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  line-height: 80px;
+  font-size: large;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  background-color: #6ca38d;
+  color: #ffffff;
+}
+
+a.edit-btn {
+  display: block;
+  text-align: center;
+  width: 200px;
+  height: 80px;
+  margin-bottom: 10px;
+  line-height: 80px;
+  font-size: large;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  background-color: #6ca38d;
+  color: #ffffff;
+}
+
+a.delete-btn {
+  display: block;
+  text-align: center;
+  width: 200px;
+  height: 80px;
+  line-height: 80px;
+  margin-bottom: 10px;
+  font-size: large;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  background-color: #6ca38d;
+  color: #ffffff;
+}
+
+.article-title {
+  /* font-size: 20px; */
+  color: gray;
+  margin-top: 0.5rem;
+}
+
+.article-contents {
+  /* font-size: 20px; */
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+}

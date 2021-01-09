@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  position: fixed;
+}
+
+.main {
+  padding-top: 90px;
+}
+
+.show-new-wrapper {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto 0;
+}
+
+.show-new-left-bar {
+  width: 70%;
+}
+
+.show-new-right-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30%;
+}
+
+
+.article-title {
+  /* font-size: 20px; */
+  color: gray;
+  margin-top: 0.5rem;
+}
+
+.article-select-box {
+  width: 30%;
+  height: 2rem;
+  margin-top: 0.5rem;
+}
+
+.article-title-field {
+  width: 70%;
+  height: 3.5rem;
+  margin-top: 0.5rem;
+}
+
+.article-journal-field {
+  width: 70%;
+  margin-top: 0.5rem;
+}
+
+.article-date-line {
+  display: flex;
+  margin-top: 0.5rem;
+}
+
+#article_publication_date_1i {
+  width: 20%;
+}
+
+#article_publication_date_2i {
+  width: 10%;
+}
+
+#article_publication_date_3i {
+  width: 10%;
+}
+
+.article-abstract-field {
+  width: 70%;
+  height: 8rem;
+  margin-top: 0.5rem;
+}
+
+.article-bottom-bar {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+
+input.post-btn {
+  display: block;
+  text-align: center;
+  width: 200px;
+  height: 80px;
+  margin: 30px 30px 0 0;
+  line-height: 80px;
+  font-size: large;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  background-color: #6ca38d;
+  color: #ffffff;
+}
+
+a.toppage-btn {
+  display: block;
+  text-align: center;
+  width: 200px;
+  height: 80px;
+  margin: 30px 30px 0 0;
+  line-height: 80px;
+  font-size: large;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  background-color: #6ca38d;
+  color: #ffffff;
+}

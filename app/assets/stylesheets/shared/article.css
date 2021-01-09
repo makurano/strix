@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+}
+
+.card {
+  width: 90%;
+  margin: 20px auto 0;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.card-contents {
+  width: 95%;
+  margin: auto auto;
+}
+
+
+.article-btn {
+  text-decoration: none;
+  color: #0055aa;
+}
+
+.article-profile-btn {
+  text-decoration: none;
+  color: #0055aa;
+}
+
+
+.card-middle {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 5px;
+  border-bottom: 1px solid lightgray; 
+}
+
+.journal-data {
+  display: block;
+}
+
+a.card-download-btn {
+  width: 150px;
+  height: 50px;
+  margin: auto 30px;
+  text-align: center;
+  line-height: 50px;
+  text-decoration: none;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #6ca38d;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  color: gray;
+}

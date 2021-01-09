@@ -1,0 +1,49 @@
+<div class="card">
+    <div class="card-contents">
+      <div class="card-header">
+        <a href="/articles/<%= article.id %>" class="article-btn">
+        <div class="card-bar-long">
+          <%= article.title %>
+        </div>
+          <%if article.title_en.present?%>
+            <div class="card-bar-long">
+              <%= article.title_en %>
+            </div>
+          <%end%>
+        </a>
+        <div class="card-bar-long">
+          著者:
+          <span>
+          <a href="/profiles/<%= article.user.id %>" class="article-profile-btn">
+            &nbsp;&nbsp;&nbsp;<%= "#{article.user.last_name}#{article.user.first_name}" %>
+          </a>
+          </span>
+        </div>
+      </div>
+      <div class="card-middle">
+        <div class="journal-data">
+          <div class="card-bar-middle">
+            <%# if article.journal_name.present? %>
+              掲載誌:&nbsp;<%= article.journal_name %>
+            <%# end %>
+          </div>
+          <div class="card-bar-middle">
+            <%# if article.publication_date.present? %>
+              掲載日:&nbsp;<%= article.publication_date %>
+            <%# end %>
+          </div>
+        </div>
+          <% if article.article_file.present? %>
+            <%= link_to "download", rails_blob_path(article.article_file), class:"card-download-btn" %>
+          <% end %>
+      </div>
+      <div class="card-footer">
+        <div class="card-bar-short">
+          <%= article.category.name %>
+        </div>
+        <div class="card-bar-short">
+          <%= article.created_at %>
+        </div>
+      </div>
+    </div>
+</div>

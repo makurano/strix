@@ -1,56 +1,57 @@
-<h1>Profile</h1>
-  <div>
-    <%if @profile.image.attached? %>
-      <%= image_tag @profile.image.variant(resize: '500x500')%>
+<div class="header">
+  <%= render "shared/header" %>
+  <%= render "shared/post_form" %>
+</div>
+
+<div class="main">
+  <div class="profile">Profile</div>
+    <div class="profile-bar-wrapper">
+      <div class="profile-left-bar">
+        <div class="person-image">
+          <% if @profile.image.attached? %>
+            <%= image_tag @profile.image.variant(resize: '360x500')%>
+          <% else %>
+            <%= image_tag "person_pict.png", size:("360x500") %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="profile-right-bar">
+        <div class="profile-title">Name</div>
+        <div class="profile-contents"><%="#{@profile.user.last_name}#{@profile.user.first_name}"%></div>
+        <div class="profile-contents"><%="#{@profile.user.first_name_en}#{@profile.user.last_name_en}"%></div>
+
+        <div class="profile-title">Degree</div>
+        <div class="profile-contents"><%= @profile.degree %>&nbsp;</div>
+
+        <div class="profile-title">Birthday</div>
+        <div class="profile-contents"><%= @profile.user.birthday %></div>
+
+        <div class="profile-title">Affiliation</div>
+        <div class="profile-contents"><%= @profile.affiliation %>&nbsp;</div>
+
+        <div class="profile-title">Research Fields</div>
+        <div class="profile-contents"><%= @profile.research_fields %>&nbsp;</div>
+
+        <div class="profile-title">Contact</div>
+        <div class="profile-contents"><%= @profile.contact %>&nbsp;</div>
+
+        <div class="profile-title">Education</div>
+        <div class="profile-contents"><%= @profile.education %>&nbsp;</div>
+
+        <div class="profile-title">Academic Affiliations</div>
+        <div class="profile-contents"><%= @profile.academic_affiliations %></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="profile-bottom-bar">
+  <%if user_signed_in? %>
+    <% if current_user.id == @profile.user.id%>
+      <%= link_to "編集する", edit_profile_path, class:"profile-edit-btn" %>
     <% end %>
-  </div>
-
-
-  <div>
-    <div>Name</div>
-    <div><%="#{@profile.user.first_name_en}#{@profile.user.last_name_en}"%></div>
-  </div>
-
-  <div>
-    <div>Degree</div>
-    <div><%= @profile.degree %></div>
-  </div>
-
-  <div>
-    <div>Birthday</div>
-    <div><%= @profile.user.birthday %></div>
-  </div>
-
-  <div>
-    <div>Affiliation</div>
-    <div><%= @profile.affiliation %></div>
-  </div>
-
-  <div>
-    <div>Research Fields</div>
-    <div><%= @profile.research_fields %></div>
-  </div>
-
-  <div>
-    <div>Contact</div>
-    <div><%= @profile.contact %></div>
-  </div>
-
-  <div>
-    <div>Education</div>
-    <div><%= @profile.education %></div>
-  </div>
-
-  <div>
-    <div>Academic Affiliations</div>
-    <div><%= @profile.academic_affiliations %></div>
-  </div>
-
-
-<%if user_signed_in? %>
-  <% if current_user.id == @profile.user.id%>
-    <%= link_to "編集する", edit_profile_path %>
   <% end %>
-<% end %>
-
-<%= link_to "トップページ", root_path %>
+  <%= link_to "トップページ", root_path, class:"toppage-btn" %>
+  </div>
+</div>
