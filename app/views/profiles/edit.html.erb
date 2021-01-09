@@ -1,54 +1,46 @@
-<h1>Profile Edit</h1>
+<div class="header">
+  <%= render "shared/header" %>
+  <%= render "shared/post_form" %>
+</div>
 
-<%= form_with model: @profile, local: true do |f| %>
+<div class="main">
+  <div class="profile">Profile Edit</div>
+  <%= form_with model: @profile, local: true do |f| %>
+    <div class="profile-edit-bar-wrapper">
+      <div class="profile-edit-left-bar">
+        <div><%= f.file_field :image %></div>
+      </div>
 
-  <div>
-    <div><%= f.file_field :image %></div>
-  </div>
-  <div>
-    <div>Name</div>
-    <div><%="#{@profile.user.first_name_en}#{@profile.user.last_name_en}"%></div>
-  </div>
+      <div class="profile-edit-right-bar">
+        <div class="profile-title" >Name</div>
+        <div><%="#{@profile.user.last_name}#{@profile.user.first_name}"%></div>
+        <div><%="#{@profile.user.first_name_en}#{@profile.user.last_name_en}"%></div>
+      
+        <div class="profile-title">Degree</div>
+        <%= f.text_area :degree, class:"profile-contents-field" %>
 
-  <div>
-    <div>Degree</div>
-    <div><%= f.text_area :degree %></div>
-  </div>
+        <div class="profile-title">Birthday</div>
+        <div><%= @profile.user.birthday %></div>
 
-  <div>
-    <div>Birthday</div>
-    <div><%= @profile.user.birthday %></div>
-  </div>
+        <div class="profile-title">Affiliation</div>
+        <%= f.text_area :affiliation, class:"profile-contents-field" %>
 
-  <div>
-    <div>Affiliation</div>
-    <div><%= f.text_area :affiliation %></div>
-  </div>
+        <div class="profile-title">Research Fields</div>
+        <%= f.text_area :research_fields, class:"profile-contents-field" %>
 
-  <div>
-    <div>Research Fields</div>
-    <div><%= f.text_area :research_fields %></div>
-  </div>
+        <div class="profile-title">Contact</div>
+        <%= f.text_area :contact, class:"profile-contents-field" %>
 
-  <div>
-    <div>Contact</div>
-    <div><%= f.text_area :contact %></div>
-  </div>
+        <div class="profile-title">Education</div>
+        <%= f.text_area :education, class:"profile-contents-field" %>
 
-  <div>
-    <div>Education</div>
-    <div><%= f.text_area :education %></div>
-  </div>
-
-  <div>
-    <div>Academic Affiliations</div>
-    <div><%= f.text_area :academic_affiliations %></div>
-  </div>
-
-  <div>
-    <%= f.submit "更新する" %>
-  </div>
-
-<% end %>
-
-<%= link_to "戻る", profile_path %>
+        <div class="profile-title">Academic Affiliations</div>
+        <%= f.text_area :academic_affiliations, class:"profile-contents-field" %>
+      </div>
+    </div>
+    <div class="profile-bottom-bar">
+      <%= f.submit "更新する", class:"profile-update-btn" %>
+      <%= link_to "戻る", profile_path, class:"profile-show-btn" %>
+    </div>
+  <% end %>
+</div>

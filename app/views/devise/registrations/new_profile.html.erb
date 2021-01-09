@@ -1,47 +1,53 @@
-<h2>Profile</h2>
+<div class="header">
+  <%= render "shared/header" %>
+</div>
 
-<%= form_for @profile do |f| %>
-  <%= render "devise/shared/error_messages", resource: @profile %>
+<div class="signup-main">
+  <div class="signup-wrapper">
+    <%= form_for @profile do |f| %>
+      <div class="signup-header">Profile Creation</div>
+      <%= render "devise/shared/error_messages", resource: @profile %>
 
-  <div>プロフィールに表示させる画像を選択してください</div>
-  <div>
-    <%#= f.label :affliation %>
-    <%= f.file_field :image %>
+      <div class="signup-profile-message">※プロフィールは後から編集できます</div>
+      <div class="signup-image-group">
+        <div class="signup-image-text">プロフィールに表示させる画像を選択してください</div>
+        <label class="signup-image-field">
+          <span>画像を選択</span>
+          <%= f.file_field :image, class:"hidden" %>
+        </label>
+      </div>
+
+      <div class="signup-profile-group">
+        <div class="signup-form-text">Degree</div>
+        <%= f.text_area :degree, class:"signup-profile-field" %>
+      </div>
+
+      <div class="signup-profile-group">
+        <div class="signup-form-text">Affiliation</div>
+        <%= f.text_area :affiliation, class:"signup-profile-field" %>
+      </div>
+
+      <div class="signup-profile-group">
+        <div class="signup-form-text">Research Fields</div>
+        <%= f.text_area :research_fields, class:"signup-profile-field" %>
+      </div>
+
+      <div class="signup-profile-group">
+        <div class="signup-form-text">Contact</div>
+        <%= f.text_area :contact, class:"signup-profile-field" %>
+      </div>
+
+      <div class="signup-profile-group">
+        <div class="signup-form-text">Education</div>
+        <%= f.text_area :education, class:"signup-profile-field" %>
+      </div>
+
+      <div class="signup-profile-group">
+        <div class="signup-form-text">Academic Affiliations</div>
+        <%= f.text_area :academic_affiliations, class:"signup-profile-field" %>
+      </div>
+
+      <%= f.submit "Sign up", class:"signup-btn" %>
+    <% end %>
   </div>
-
-  <div class="field">
-    <%= f.label :degree %><br />
-    <%= f.text_area :degree %>
-  </div>
-
-  <div class="field">
-    <%= f.label :affliation %><br />
-    <%= f.text_area :affiliation %>
-  </div>
-
-  <div class="field">
-    <%= f.label :research_fields %><br />
-    <%= f.text_area :research_fields %>
-  </div>
-
-  <div class="field">
-    <%= f.label :contact %><br />
-    <%= f.text_area :contact %>
-  </div>
-
-  <div class="field">
-    <%= f.label :education %><br />
-    <%= f.text_area :education %>
-  </div>
-
-  <div class="field">
-    <%= f.label :academic_affiliations %><br />
-    <%= f.text_area :academic_affiliations %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

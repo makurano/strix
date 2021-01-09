@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  min-height: 60px;
+  background-color: #417563;
+}
+
+#type {
+  width: 8vw;
+  height: 28px;
+}
+
+.text-form {
+  width: 30vw;
+}
+
+.submit-form {
+  width: 10vw;
+}

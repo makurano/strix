@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  position: fixed;
+}
+
+.main {
+  padding-top: 90px;
+}
+
+.index-wrapper {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+}
+
+
+.index-side-bar {
+  width: 35%;
+  border-right: 1px solid black;
+  overflow: scroll;
+}
+
+.index-main-bar {
+  width: 65%;
+  overflow: scroll;
+}

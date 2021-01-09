@@ -1,0 +1,18 @@
+.index-side-bar-contents {
+  width: 100%;
+}
+
+.index-image {
+  display: flex;
+  justify-content: center;
+}
+
+.index-profile-image {
+  width: 80%;
+  height: 500px;
+}
+
+.index-profile-wrapper {
+  width: 70%;
+  margin: 0 auto;
+}
