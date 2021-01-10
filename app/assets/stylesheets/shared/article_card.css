@@ -45,8 +45,16 @@ a.card-download-btn {
   line-height: 50px;
   text-decoration: none;
   border-radius: 5px;
+  border: 1px solid #6ca38d;
   color: #ffffff;
   background-color: #6ca38d;
+  transition: 0.4s ease;
+}
+
+.card-download-btn:hover {
+  color: #6ca38d;
+  background-color: #fff;
+  border: 1px solid #6ca38d;
 }
 
 .card-footer {

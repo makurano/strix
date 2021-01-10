@@ -1,4 +1,4 @@
-<div class="card">
+<div class="researcher-card">
   <a href="/profiles/<%= researcher.id %>" class="profile-btn">
     <div class="researcher-card-contents">
       <div class="card-bars">
@@ -18,9 +18,9 @@
           記事数:&nbsp;&nbsp;<%= researcher.articles.size %>
         </div>
       </div>
-      <div class="image">
+      <div class="card-image">
         <%if researcher.profile.image.present? %>
-          <%= image_tag researcher.profile.image.variant(resize: "100x100") %>
+          <%= image_tag researcher.profile.image.variant(resize: "100x100"),class:"card-researcher-image" %>
         <%end%>
       </div>
     </div>

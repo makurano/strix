@@ -1,0 +1,17 @@
+.top-page-footer {
+  height: 5rem;
+  background-color: #4a4a4a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.copyright {
+  color: white;
+}
