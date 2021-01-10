@@ -22,25 +22,25 @@
         <div class="profile-contents"><%="#{@profile.user.first_name_en}#{@profile.user.last_name_en}"%></div>
 
         <div class="profile-title">Degree</div>
-        <div class="profile-contents"><%= @profile.degree %>&nbsp;</div>
+        <div class="profile-contents"><%= markdown(@profile.degree) %>&nbsp;</div>
 
         <div class="profile-title">Birthday</div>
         <div class="profile-contents"><%= @profile.user.birthday %></div>
 
         <div class="profile-title">Affiliation</div>
-        <div class="profile-contents"><%= @profile.affiliation %>&nbsp;</div>
+        <div class="profile-contents"><%= markdown(@profile.affiliation) %>&nbsp;</div>
 
         <div class="profile-title">Research Fields</div>
-        <div class="profile-contents"><%= @profile.research_fields %>&nbsp;</div>
+        <div class="profile-contents"><%= markdown(@profile.research_fields) %>&nbsp;</div>
 
         <div class="profile-title">Contact</div>
-        <div class="profile-contents"><%= @profile.contact %>&nbsp;</div>
+        <div class="profile-contents"><%= markdown(@profile.contact) %>&nbsp;</div>
 
         <div class="profile-title">Education</div>
-        <div class="profile-contents"><%= @profile.education %>&nbsp;</div>
+        <div class="profile-contents"><%= markdown(@profile.education) %>&nbsp;</div>
 
         <div class="profile-title">Academic Affiliations</div>
-        <div class="profile-contents"><%= @profile.academic_affiliations %></div>
+        <div class="profile-contents"><%= markdown(@profile.academic_affiliations) %></div>
       </div>
     </div>
 

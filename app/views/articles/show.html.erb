@@ -17,11 +17,11 @@
       <div class="article-title">著者</div>
         <div class="article-contents"><%= "#{@article.user.last_name}#{@article.user.first_name}" %></div>
       <div class="article-title" >掲載誌</div>
-        <div class="article-contents"><%= @article.journal_name %>&nbsp;</div>
+        <div class="article-contents"><%= markdown(@article.journal_name) %>&nbsp;</div>
       <div class="article-title" >掲載日</div>
         <div class="article-contents"><%= @article.publication_date %>&nbsp;</div>
       <div class="article-title" >概要</div>
-        <div class="article-contents"><%= @article.abstract %>&nbsp;</div>
+        <div class="article-contents"><%= markdown(@article.abstract) %>&nbsp;</div>
       <%= link_to "戻る", root_path %>
     </div>
     
