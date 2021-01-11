@@ -1,0 +1,78 @@
+.index-page-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto 20px;
+}
+
+.paginate {
+  margin-bottom: 10px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+/* 「first」(kaminari/first_page.html.erb) */
+/* 「last」(kaminari/last_page.html.erb) */
+/* 「next」(kaminari/next_page.html.erb) */
+/* 「page」(kaminari/page.html.erb) */
+/* 「prev」(kaminari/prev_page.html.erb) */
+
+.first>a,
+.prev>a,
+.next>a,
+.last>a {
+  display: inline-block;
+  width: 6rem;
+  height: 3rem;
+  line-height: 3rem;
+  margin: 0 0.2rem;
+  border: 1px solid #ebebeb;
+  border-radius: 3px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #ebebeb;
+  color: black;
+  transition: 0.2s ease;
+}
+
+.page>a {
+  display: inline-block;
+  width: 4rem;
+  height: 3rem;
+  line-height: 3rem;
+  margin: 0 0.2rem;
+  border: 1px solid #ebebeb;
+  border-radius: 3px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #ebebeb;
+  color: black;
+  transition: 0.2s ease;
+}
+
+.first>a:hover,
+.prev>a:hover,
+.page>a:hover,
+.next>a:hover,
+.last>a:hover {
+  background-color: #fafafa;
+}
+
+.current {
+  display: inline-block;
+  width: 4rem;
+  height: 3rem;
+  line-height: 3rem;
+  margin: 0 0.2rem;
+  border: 1px solid #ebebeb;
+  border-radius: 3px;
+  text-align: center;
+  text-decoration: none;
+  color: lightgrey;
+  background-color: #4a4a4a;
+}
+

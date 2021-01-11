@@ -63,3 +63,4 @@ gem 'mini_magick'
 gem 'pry-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'redcarpet'
+gem 'kaminari'

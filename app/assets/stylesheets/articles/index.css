@@ -12,19 +12,22 @@
 
 .index-wrapper {
   display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow: scroll;
 }
 
 
-.index-side-bar {
+/* .index-side-bar {
   width: 35%;
   border-right: 1px solid black;
   overflow: scroll;
-}
+} */
 
 .index-main-bar {
   width: 100%;
-  overflow: scroll;
 }
+
+
+
