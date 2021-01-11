@@ -2,22 +2,19 @@
     <div class="card-contents">
       <div class="card-header">
         <a href="/articles/<%= article.id %>" class="article-btn">
-        <div class="card-bar-long">
-          <%= article.title %>
-        </div>
-          <%if article.title_en.present?%>
-            <div class="card-bar-long">
-              <%= article.title_en %>
-            </div>
-          <%end%>
+          <div class="card-bar-long">
+            <%= article.title %>
+          </div>
+            <%if article.title_en.present?%>
+              <div class="card-bar-long">
+                <%= article.title_en %>
+              </div>
+            <%end%>
         </a>
         <div class="card-bar-long">
-          著者:
-          <span>
           <a href="/profiles/<%= article.user.id %>" class="article-profile-btn">
-            &nbsp;&nbsp;&nbsp;<%= "#{article.user.last_name}#{article.user.first_name}" %>
+            <%= "#{article.user.last_name}#{article.user.first_name}" %>
           </a>
-          </span>
         </div>
       </div>
       <div class="card-middle">
