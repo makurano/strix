@@ -28,7 +28,7 @@
     <div class="index-page-bar">
       <% if @article.present? %>
         <%= render "shared/pagenation_bar", articles: @articles %>
-      <% else %>
+      <% elsif @researcher.present? %>
         <div class="paginate"><%= paginate @researchers %></div>
         <div class="page_entries_info"><%= page_entries_info @researchers %></div>
       <% end%>
