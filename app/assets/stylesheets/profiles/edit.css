@@ -25,6 +25,35 @@
   width: 30%;
 }
 
+.profile-image-field {
+  display: block;
+  width: 80%;
+  height: 3rem;
+  margin: 0 auto 20px;
+  color: #fff;
+  text-align: center;
+  line-height: 3rem;
+  background-color: #6ca38d;
+  border: 1px solid #6ca38d;
+  border-radius: 5px;
+  transition: 0.4s ease;
+}
+
+.profile-image-field:hover {
+  color: #6ca38d;
+  background-color: #fff;
+  border: 1px solid #6ca38d;
+}
+
+.hidden {
+  display: none;
+}
+
+#image-preview>div>img {
+  width: 360px;
+  height: 500px;
+}
+
 .profile-edit-right-bar {
   width: 70%;
 }
