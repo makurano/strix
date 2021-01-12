@@ -8,7 +8,11 @@
   <%= form_with model: @profile, local: true do |f| %>
     <div class="profile-edit-bar-wrapper">
       <div class="profile-edit-left-bar">
-        <div><%= f.file_field :image %></div>
+        <label class="profile-image-field">
+          <span>画像を選択</span>
+          <div><%= f.file_field :image, class:"hidden" %></div>
+        </label>
+        <div id="image-preview"><%= image_tag @profile.image.variant(resize:'360x500')%></div>
       </div>
 
       <div class="profile-edit-right-bar">
