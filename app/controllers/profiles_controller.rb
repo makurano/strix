@@ -4,15 +4,12 @@ before_action :set_profile, only: [:show, :edit, :update]
 before_action :prevent_edit, only: [:edit, :update]
 
   def show
-    @profile = Profile.find(params[:id])
   end
 
   def edit
-    @profile = Profile.find(params[:id])
   end
 
   def update
-    @profile = Profile.find(params[:id])
     if @profile.update(profile_params)
       redirect_to action: :show
     else

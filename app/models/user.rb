@@ -32,4 +32,24 @@ class User < ApplicationRecord
       User.all
     end
   end
+
+  def self.guest
+    user = User.find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64+"a1"
+      user.last_name = "ゲスト"
+      user.first_name = "ユーザー"
+      user.last_name_en = "Guest"
+      user.first_name_en = "User"
+      user.birthday = "1900-01-01"
+    end
+    Profile.find_or_create_by!(user_id: User.find_by(email: 'guest@example.com').id) do |profile|
+      profile.degree = ""
+      profile.affiliation = ""
+      profile.research_fields = ""
+      profile.contact = ""
+      profile.education = ""
+      profile.academic_affiliations = ""
+    end
+    return user
+  end
 end
