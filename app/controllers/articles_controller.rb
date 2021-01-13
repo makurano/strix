@@ -5,9 +5,9 @@ class ArticlesController < ApplicationController
 
   def index
     # binding.pry
-    if params[:category_id] == nil
+    if params[:category_id].nil?
       @articles = Article.page(params[:page]).includes(:user).with_attached_article_file.order('created_at DESC')
-    elsif params[:category_id] == "1"||"2"||"3"||"4"
+    elsif params[:category_id] == '1' || '2' || '3' || '4'
       @articles = Article.where(category_id: params[:category_id]).page(params[:page]).includes(:user).with_attached_article_file.order('created_at DESC')
     end
   end
@@ -48,9 +48,9 @@ class ArticlesController < ApplicationController
 
   def search
     case params[:type]
-    when "articles"
+    when 'articles'
       @articles = Article.search(params[:keyword]).page(params[:page]).with_attached_article_file.order('articles.created_at DESC')
-    when "researchers"
+    when 'researchers'
       @researchers = User.search(params[:keyword]).page(params[:page])
     end
     # binding.pry

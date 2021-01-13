@@ -59,8 +59,8 @@ end
 gem 'active_hash'
 gem 'devise'
 gem 'image_processing', '~> 1.2'
+gem 'kaminari'
 gem 'mini_magick'
 gem 'pry-rails'
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'redcarpet'
-gem 'kaminari'
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

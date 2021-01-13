@@ -27,7 +27,7 @@ class User < ApplicationRecord
   def self.search(search)
     if search != ''
       User.where('last_name LIKE(?) OR first_name LIKE(?) OR last_name_en LIKE(?) OR first_name_en LIKE(?)',
-                                      "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+                 "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
     else
       User.all
     end
@@ -35,21 +35,21 @@ class User < ApplicationRecord
 
   def self.guest
     user = User.find_or_create_by!(email: 'guest@example.com') do |user|
-      user.password = SecureRandom.urlsafe_base64+"a1"
-      user.last_name = "ゲスト"
-      user.first_name = "ユーザー"
-      user.last_name_en = "Guest"
-      user.first_name_en = "User"
-      user.birthday = "1900-01-01"
+      user.password = SecureRandom.urlsafe_base64 + 'a1'
+      user.last_name = 'ゲスト'
+      user.first_name = 'ユーザー'
+      user.last_name_en = 'Guest'
+      user.first_name_en = 'User'
+      user.birthday = '1900-01-01'
     end
     Profile.find_or_create_by!(user_id: User.find_by(email: 'guest@example.com').id) do |profile|
-      profile.degree = ""
-      profile.affiliation = ""
-      profile.research_fields = ""
-      profile.contact = ""
-      profile.education = ""
-      profile.academic_affiliations = ""
+      profile.degree = ''
+      profile.affiliation = ''
+      profile.research_fields = ''
+      profile.contact = ''
+      profile.education = ''
+      profile.academic_affiliations = ''
     end
-    return user
+    user
   end
 end

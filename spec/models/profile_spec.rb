@@ -11,27 +11,27 @@ RSpec.describe Profile, type: :model do
         expect(@profile).to be_valid
       end
       it 'degreeが空でも登録できる' do
-        @profile.degree = ""
+        @profile.degree = ''
         expect(@profile).to be_valid
       end
       it 'affiliationが空でも登録できる' do
-        @profile.affiliation = ""
+        @profile.affiliation = ''
         expect(@profile).to be_valid
       end
       it 'research_fieldsが空でも登録できる' do
-        @profile.research_fields = ""
+        @profile.research_fields = ''
         expect(@profile).to be_valid
       end
       it 'contactが空でも登録できる' do
-        @profile.contact = ""
+        @profile.contact = ''
         expect(@profile).to be_valid
       end
       it 'educationが空でも登録できる' do
-        @profile.education = ""
+        @profile.education = ''
         expect(@profile).to be_valid
       end
       it 'academic_affiliationsが空でも登録できる' do
-        @profile.academic_affiliations = ""
+        @profile.academic_affiliations = ''
         expect(@profile).to be_valid
       end
       it 'imageが空でも登録できる' do
