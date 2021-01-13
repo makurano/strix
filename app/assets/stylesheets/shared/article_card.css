@@ -76,3 +76,7 @@ a.card-download-btn {
   font-size: 15px;
   color: gray;
 }
+
+.card-bar-short+.card-bar-short {
+  margin-right: 22px;
+}
