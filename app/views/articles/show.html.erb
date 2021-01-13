@@ -1,6 +1,5 @@
 <div class="header">
   <%= render "shared/header" %>
-  <%= render "shared/post_form" %>
 </div>
 
 <div class="main">
@@ -22,7 +21,6 @@
         <div class="article-contents"><%= @article.publication_date %>&nbsp;</div>
       <div class="article-title" >概要</div>
         <div class="article-contents"><%= markdown(@article.abstract) %>&nbsp;</div>
-      <%= link_to "戻る", root_path %>
     </div>
     
     <div class="show-right-bar">
@@ -40,4 +38,5 @@
       </div>
     </div>
   </div>
+  <%= link_to "戻る", root_path, class:"article-toppage-btn" %>
 </div>

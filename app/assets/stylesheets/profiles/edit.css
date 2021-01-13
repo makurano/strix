@@ -7,7 +7,7 @@
 }
 
 .main {
-  padding-top: 90px;
+  padding-top: 50px;
 }
 
 .profile {
@@ -76,21 +76,7 @@
   justify-content: center;
 }
 
-input.profile-update-btn {
-  display: block;
-  text-align: center;
-  width: 200px;
-  height: 80px;
-  margin: 30px 30px 0 0;
-  line-height: 80px;
-  font-size: large;
-  text-decoration: none;
-  border: none;
-  border-radius: 5px;
-  background-color: #6ca38d;
-  color: #ffffff;
-}
-
+input.profile-update-btn,
 a.profile-show-btn {
   display: block;
   text-align: center;
@@ -100,8 +86,16 @@ a.profile-show-btn {
   line-height: 80px;
   font-size: large;
   text-decoration: none;
-  border: none;
+  border: 1px solid #6ca38d;
   border-radius: 5px;
   background-color: #6ca38d;
   color: #ffffff;
+  transition: 0.4s ease;
+}
+
+.profile-update-btn:hover,
+.profile-show-btn:hover {
+  color: #6ca38d;
+  background-color: #fff;
+  border: 1px solid #6ca38d;
 }

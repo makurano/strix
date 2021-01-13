@@ -26,9 +26,10 @@
 .nav {
   font-size: 18px;
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
   flex-wrap: wrap;
-  width: 20%;
+  margin-right: 5rem;
   padding: 1vh 0;
 }
 
@@ -38,24 +39,58 @@
   align-items: flex-end;
 }
 
-.user-nickname {
-  text-decoration: none;
+.user-name {
+  display: block;
   line-height: 50px;
   margin-right: 3vw;
+  text-decoration: none;
   color: #333333;
   font-weight: bold;
 }
 
-.login,
-.logout {
-  text-decoration: none;
+.login {
+  display: block;
   line-height: 50px;
   margin-right: 3vw;
+  text-decoration: none;
   color: #333333;
 }
 
-.sign-up {
+.sign-up,
+.logout {
+  display: block;
   line-height: 50px;
   text-decoration: none;
   color: #333333;
+}
+
+
+
+.nav-left {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 1em;
+}
+.left-arrow {
+  width: 12px;
+  height: 12px;
+  border: 2px solid;
+  border-color: transparent transparent #333 #333;
+  transform: rotate(45deg);
+  margin-left: 2em;
+}
+
+.post-link {
+  display: block;
+  text-decoration: none;
+  color: #333;
+}
+
+.user-name:hover,
+.login:hover,
+.sign-up:hover,
+.logout:hover,
+.post-link:hover {
+  text-decoration: underline;
 }

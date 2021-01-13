@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-.signup-wrapper {
+.signup-profile-wrapper {
   width: 100%;
   padding: 20px 50px 50px;
   background-color: white;
@@ -27,7 +27,7 @@
   margin: 0 auto 1rem;
 }
 
-.signup-profile-wrapper {
+.signup-profile-all {
   display: flex;
   justify-content: space-between;
 }

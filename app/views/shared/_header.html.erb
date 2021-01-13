@@ -3,14 +3,20 @@
     <%= link_to "STRIX", "/", class: "icon"%>
   </div>
   <div class='nav'>
-    <ul class='lists-right'>
+    <div class='lists-right'>
       <% if user_signed_in? %>
-        <li><%= link_to "#{current_user.last_name}#{current_user.first_name}", profile_path(current_user.profile.id), class: "user-nickname" %></li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+        <%= link_to "#{current_user.last_name}#{current_user.first_name}", profile_path(current_user.profile.id), class: "user-name" %>
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
       <% else %>
-        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+        <%= link_to 'ログイン', new_user_session_path, class: "login" %>
+        <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
       <% end %>
-    </ul>
+    </div>
+  <% if user_signed_in?%>
+    <div class="nav-left">
+      <%= link_to "新規投稿", new_article_path, class:"post-link" %>
+      <div class="left-arrow"></div>
+    </div>
+  <% end %>
   </div>
 </header>

@@ -46,8 +46,15 @@
   line-height: 3rem;
   font-size: large;
   text-decoration: none;
-  border: none;
+  border: 1px solid #6ca38d;
   border-radius: 5px;
   background-color: #6ca38d;
   color: #ffffff;
+  transition: 0.4s ease;
+}
+
+.login-btn:hover {
+  color: #6ca38d;
+  background-color: #fff;
+  border: 1px solid #6ca38d;
 }
