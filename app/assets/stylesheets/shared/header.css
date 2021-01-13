@@ -48,7 +48,8 @@
   font-weight: bold;
 }
 
-.login {
+.login,
+.guest-login {
   display: block;
   line-height: 50px;
   margin-right: 3vw;

@@ -11,7 +11,9 @@
           <span>画像を選択</span>
           <div><%= f.file_field :image, class:"hidden" %></div>
         </label>
+        <% if @profile.image.present? %>
         <div id="image-preview"><%= image_tag @profile.image.variant(resize:'360x500')%></div>
+        <% end %>
       </div>
 
       <div class="profile-edit-right-bar">
