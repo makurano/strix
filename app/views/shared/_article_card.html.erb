@@ -39,7 +39,7 @@
           <%= article.category.name %>
         </div>
         <div class="card-bar-short" id="post-time">
-          <%= l article.created_at %>
+          <%= article.created_at.to_s(:datetime_jp) %>
         </div>
       </div>
     </div>
