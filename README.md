@@ -16,10 +16,10 @@ https://strix.herokuapp.com/
 画面右上の**ゲストログインボタン**を押してログインしてください。
 
 # 利用方法
-ユーザー登録をすると自分の記事の投稿、学術分野に関わるマイページの編集が可能になります。
-記事/研究者をフォームから検索することができます。
-記事のダウンロードボタンを押すと投稿されたファイルを手に入れることができます。
-**投稿や編集をする必要がない場合、ログインの必要はありません。**
+ユーザー登録をすると自分の記事の投稿、学術分野に関わるマイページの編集が可能になります。<br>
+記事/研究者をフォームから検索することができます。<br>
+記事のダウンロードボタンを押すと投稿されたファイルを手に入れることができます。<br>
+**投稿や編集をする必要がない場合、ログインの必要はありません。**<br>
 
 # 目指した課題解決
 - 若い研究者が手軽に個人ページを持ち、発信できる環境を作りたい
@@ -41,12 +41,12 @@ https://strix.herokuapp.com/
 
 # 機能
 ##　・ユーザーログイン機能
-Gem devise使用
-研究者はメールアドレス、パスワード、名前、英語名、生年月日を入力することでユーザー登録ができ、
-記事の操作やマイページを持つことができます。
+Gem devise使用<br>
+研究者はメールアドレス、パスワード、名前、英語名、生年月日を入力することでユーザー登録ができ、<br>
+記事の操作やマイページを持つことができます。<br>
 
 ## ・記事投稿機能
-Gem ActiveStorage使用
+Gem ActiveStorage使用<br>
 ログイン中のユーザーはファイルを添付した記事を投稿することができます。
 
 ## ・記事一覧表示機能
@@ -165,10 +165,10 @@ include ActiveHash::Associations
 - article_file
 
 # ローカルでの動作方法
-$ git clone https://github.com/makurano/strix.git
-$ cd hoge
-$ bundle install
-$ rails db:create
-$ rails db:migrate
-$ rails s
+$ git clone https://github.com/makurano/strix.git<br>
+$ cd hoge<br>
+$ bundle install<br>
+$ rails db:create<br>
+$ rails db:migrate<br>
+$ rails s<br>
 http://localhost:3000
