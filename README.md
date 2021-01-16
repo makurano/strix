@@ -40,7 +40,8 @@ https://strix.herokuapp.com/
 - Mac Catalina(10.15.6)
 
 # 機能
-##　・ユーザーログイン機能
+
+## ・ユーザーログイン機能
 Gem devise使用<br>
 研究者はメールアドレス、パスワード、名前、英語名、生年月日を入力することでユーザー登録ができ、<br>
 記事の操作やマイページを持つことができます。<br>
@@ -53,7 +54,7 @@ Gem ActiveStorage使用<br>
 全てのユーザーがタイトル、著者、掲載誌、掲載日、投稿日、カテゴリーをまとめた記事を一覧にして見ることができます。
 [![Image from Gyazo](https://i.gyazo.com/090aa6c6abcc54640618477bb9ceab4e.png)](https://gyazo.com/090aa6c6abcc54640618477bb9ceab4e)
 
-## ファイルダウンロード機能
+## ・ファイルダウンロード機能
 全てのユーザーは記事に添付されたファイルを見ることができる。
 [![Image from Gyazo](https://i.gyazo.com/a1104fda301b417a290b6632f8c7c3a0.gif)](https://gyazo.com/a1104fda301b417a290b6632f8c7c3a0)
 
