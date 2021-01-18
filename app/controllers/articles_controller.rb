@@ -53,7 +53,6 @@ class ArticlesController < ApplicationController
     when 'researchers'
       @researchers = User.search(params[:keyword]).page(params[:page])
     end
-    # binding.pry
   end
 
   private

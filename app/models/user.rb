@@ -26,10 +26,12 @@ class User < ApplicationRecord
 
   def self.search(search)
     if search != ''
-      User.where('last_name LIKE(?) OR first_name LIKE(?) OR last_name_en LIKE(?) OR first_name_en LIKE(?)',
-                 "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+      # binding.pry
+      query_str = 'concat(last_name, first_name) LIKE(?) OR concat(first_name_en, last_name_en) LIKE(?) OR last_name LIKE(?) 
+                    OR first_name LIKE(?) OR last_name_en LIKE(?) OR first_name_en LIKE(?)'
+      User.where(query_str, "#{search}","#{search}","#{search}","#{search}","#{search}","#{search}")
     else
-      User.all
+      User.includes(:profile)
     end
   end
 
