@@ -16,29 +16,29 @@
       </div>
 
       <div class="profile-right-bar">
-        <div class="profile-title">Name</div>
+        <div class="profile-title">氏名 / Name</div>
         <div class="profile-contents"><%="#{@profile.user.last_name}#{@profile.user.first_name}"%></div>
         <div class="profile-contents"><%="#{@profile.user.first_name_en}#{@profile.user.last_name_en}"%></div>
 
-        <div class="profile-title">Degree</div>
+        <div class="profile-title">学位 / Degree</div>
         <div class="profile-contents"><%= markdown(@profile.degree) %>&nbsp;</div>
 
-        <div class="profile-title">Birthday</div>
+        <div class="profile-title">生年月日 / Birthday</div>
         <div class="profile-contents"><%= @profile.user.birthday %></div>
 
-        <div class="profile-title">Affiliation</div>
+        <div class="profile-title">所属 / Affiliation</div>
         <div class="profile-contents"><%= markdown(@profile.affiliation) %>&nbsp;</div>
 
-        <div class="profile-title">Research Fields</div>
+        <div class="profile-title">研究領域 / Research Fields</div>
         <div class="profile-contents"><%= markdown(@profile.research_fields) %>&nbsp;</div>
 
-        <div class="profile-title">Contact</div>
+        <div class="profile-title">連絡先 / Contact</div>
         <div class="profile-contents"><%= markdown(@profile.contact) %>&nbsp;</div>
 
-        <div class="profile-title">Education</div>
+        <div class="profile-title">学歴 / Education</div>
         <div class="profile-contents"><%= markdown(@profile.education) %>&nbsp;</div>
 
-        <div class="profile-title">Academic Affiliations</div>
+        <div class="profile-title">所属学会 / Academic Affiliations</div>
         <div class="profile-contents"><%= markdown(@profile.academic_affiliations) %></div>
       </div>
     </div>

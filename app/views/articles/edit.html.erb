@@ -7,17 +7,17 @@
     <div class="show-edit-left-bar">
       <%= form_with model: @article, local: true do |f| %>
         <%= render 'shared/error_messages', model: @article %>
-        <div class="article-title">カテゴリー選択</div>
+        <div class="article-title">カテゴリー選択 / Category</div>
         <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"article-select-box"}) %>
         <div class="article-title">タイトル</div>
         <%= f.text_area :title, placeholder:"タイトル", class:"article-title-field" %>
         <div class="article-title">Title</div>
         <%= f.text_area :title_en, placeholder:"Title", class:"article-title-field" %>
-        <div class="article-title">著者</div>
+        <div class="article-title">著者 / Author</div>
         <div><%= "#{current_user.last_name}#{current_user.first_name}" %></div>
-        <div class="article-title">掲載誌</div>
+        <div class="article-title">掲載誌 / Journal</div>
         <%= f.text_field :journal_name, placeholder:"journal", class:"article-journal-field" %>
-        <div class="article-title">掲載日</div>
+        <div class="article-title">掲載日 / Publication</div>
         <div class="article-date-line">
           <%= raw sprintf(
             f.date_select(
@@ -31,8 +31,8 @@
             date_separator: '%s'),
             "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
         </div>
-        <div class="article-title">概要</div>
-        <%= f.text_area :abstract, placeholder:"abstract", class:"article-abstract-field" %>
+        <div class="article-title">概要 / Abstract</div>
+        <%= f.text_area :abstract, placeholder:"マークダウン可 / Markdown available", class:"article-abstract-field" %>
       </div>
     <div class="show-edit-right-bar">
       <%= f.file_field :article_file, class:"document-field"%>

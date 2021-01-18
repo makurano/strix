@@ -17,30 +17,30 @@
       </div>
 
       <div class="profile-edit-right-bar">
-        <div class="profile-title" >Name</div>
+        <div class="profile-title" >氏名 / Name</div>
         <div><%="#{@profile.user.last_name}#{@profile.user.first_name}"%></div>
         <div><%="#{@profile.user.first_name_en}#{@profile.user.last_name_en}"%></div>
       
-        <div class="profile-title">Degree</div>
-        <%= f.text_area :degree, class:"profile-contents-field" %>
+        <div class="profile-title">学位 / Degree</div>
+        <%= f.text_area :degree, placeholder:"マークダウン可 / Markdown available", class:"profile-contents-field" %>
 
-        <div class="profile-title">Birthday</div>
+        <div class="profile-title">生年月日 / Birthday</div>
         <div><%= @profile.user.birthday %></div>
 
-        <div class="profile-title">Affiliation</div>
-        <%= f.text_area :affiliation, class:"profile-contents-field" %>
+        <div class="profile-title">所属 / Affiliation</div>
+        <%= f.text_area :affiliation, placeholder:"マークダウン可 / Markdown available", class:"profile-contents-field" %>
 
-        <div class="profile-title">Research Fields</div>
-        <%= f.text_area :research_fields, class:"profile-contents-field" %>
+        <div class="profile-title">研究領域 / Research Fields</div>
+        <%= f.text_area :research_fields, placeholder:"マークダウン可 / Markdown available", class:"profile-contents-field" %>
 
-        <div class="profile-title">Contact</div>
-        <%= f.text_area :contact, class:"profile-contents-field" %>
+        <div class="profile-title">連絡先 / Contact</div>
+        <%= f.text_area :contact, placeholder:"マークダウン可 / Markdown available", class:"profile-contents-field" %>
 
-        <div class="profile-title">Education</div>
-        <%= f.text_area :education, class:"profile-contents-field" %>
+        <div class="profile-title">学歴 / Education</div>
+        <%= f.text_area :education, placeholder:"マークダウン可 / Markdown available", class:"profile-contents-field" %>
 
-        <div class="profile-title">Academic Affiliations</div>
-        <%= f.text_area :academic_affiliations, class:"profile-contents-field" %>
+        <div class="profile-title">所属学会 / Academic Affiliations</div>
+        <%= f.text_area :academic_affiliations, placeholder:"マークダウン可 / Markdown available", class:"profile-contents-field" %>
       </div>
     </div>
     <div class="profile-bottom-bar">
