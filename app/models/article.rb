@@ -9,6 +9,15 @@ class Article < ApplicationRecord
     validates :category_id, numericality: { other_than: 0, message: 'select' }
   end
 
+  validate :file_size
+  def file_size
+    if article_file.present?
+      if article_file.blob.byte_size > 4.megabytes
+        errors.add(:article_file, "can't save if the file is more than 4mb")
+      end
+    end
+  end
+
   def self.search(search)
     if search != ''
       Article.eager_load(:user).where('title LIKE(?) OR title_en LIKE(?) OR journal_name LIKE(?) OR last_name LIKE(?) OR first_name LIKE(?) OR last_name_en LIKE(?) OR first_name_en LIKE(?)',
@@ -17,4 +26,5 @@ class Article < ApplicationRecord
       Article.includes(:user)
     end
   end
+
 end

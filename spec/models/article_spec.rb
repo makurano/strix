@@ -50,6 +50,12 @@ RSpec.describe Article, type: :model do
         @article.valid?
         expect(@article.errors.full_messages).to include("Category can't be blank", 'Category select')
       end
+      # article_fileに関するテスト
+      it 'article_fileが4MBを超えると保存できない' do
+          @article.article_file.blob.byte_size = 5.megabytes
+          @article.valid?
+          expect(@article.errors.full_messages).to include("Article file can't save if the file is more than 4mb")
+      end
     end
   end
 end
