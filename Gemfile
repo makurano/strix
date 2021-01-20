@@ -64,3 +64,4 @@ gem 'mini_magick'
 gem 'pry-rails'
 gem 'redcarpet'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'aws-sdk-s3', require: false
